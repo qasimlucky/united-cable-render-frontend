@@ -45,11 +45,11 @@ import SaleManDashboard from './containers/sales/sale-dashboard';
 
 function App() {
    const [data, setData] = useState({});
-
+   axios.defaults.withCredentials = true;
    
     useEffect(() => {
       axios
-      .get("/user/role",{})
+      .get("https://united-cable-backend.onrender.com/user/role",{ withCredentials: true })
       .then(Response =>{
          console.log(Response.data)
           setData(Response.data)

@@ -1,7 +1,7 @@
 {
   "name": "office-react",
   "version": "0.1.0",
-  "proxy": "http://localhost:7000",
+  "proxy": "https://united-cable-backend.onrender.com",
   "private": true,
   "dependencies": {
     "@coreui/coreui": "^4.2.6",

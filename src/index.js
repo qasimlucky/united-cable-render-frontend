@@ -13,3 +13,4 @@ root.render(
   </BrowserRouter>
 );
 
+/* "proxy": "http://localhost:7000", */

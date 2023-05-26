@@ -22,10 +22,10 @@ let navigate = useNavigate();
 function submit(e){
   e.preventDefault();
   axios
-  .post("/user/login",{
+  .post("https://united-cable-backend.onrender.com/user/login",{
     phone_number : data.phone_number,
     password : data.password,
-  })
+  }, { withCredentials: true })
   .then(res =>{
     console.log(res.data)
     alert(res.data)
