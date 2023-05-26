@@ -4,7 +4,6 @@ import {useLocation} from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
 import  { useRef } from 'react';
 import { useReactToPrint } from 'react-to-print';
-
 function CustomerPrintOrder(props) {
 
     const [customerbill, setCustomerBill] = useState([])

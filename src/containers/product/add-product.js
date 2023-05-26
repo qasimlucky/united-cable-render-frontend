@@ -5,7 +5,7 @@ import Sidebar from "../components/Sidebar";
 import Navbar from "../components/Navbar";
 import Swal from 'sweetalert2'
 import withReactContent from 'sweetalert2-react-content'
-
+import { url } from "../../config";
 
 function AddProduct
 (props) {
@@ -19,7 +19,7 @@ function AddProduct
     setData(newdata)
    console.log(data)
   }
-  const url = "http://localhost:7000/product/add"
+  const url = `${url}product/add`
   function submit(e) {
     console.log(data)
     e.preventDefault();
