@@ -13,4 +13,4 @@ root.render(
   </BrowserRouter>
 );
 
-/* "proxy": "http://localhost:7000", */
+/* "proxy": "http://localhost:7000", *//*   "proxy": "https://united-cable-backend.onrender.com", */
