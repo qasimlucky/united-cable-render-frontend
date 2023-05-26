@@ -8,8 +8,7 @@ import { BsCartDash } from "react-icons/bs";
 import { BsFillPlusSquareFill } from "react-icons/bs";
 import { BsDashSquareFill } from "react-icons/bs";
 import Swal from 'sweetalert2'
-
-
+import { url } from "../../config";
 
 function AddSale() {
     const [productdata, setProductData] = useState([{}])
@@ -29,7 +28,7 @@ function AddSale() {
 
 
     useEffect(() => {
-        axios.get("/sale/product/get").then(Response =>{
+        axios.get(`${url}sale/product/get`).then(Response =>{
          // console.log(Response.data)
          setProductData(Response.data);
          setAllProductData(Response.data);
@@ -38,7 +37,7 @@ function AddSale() {
         })
     },[]);
     useEffect(() => {
-        axios.get("/product/color/get").then(Response =>{
+        axios.get(`${url}product/color/get`).then(Response =>{
          // console.log(Response.data)
          setProductColor(Response.data)
         }).catch(err =>{
@@ -46,7 +45,7 @@ function AddSale() {
         })
     },[]);
     useEffect(() => {
-        axios.get("/customer/get").then(Response =>{
+        axios.get(`${url}customer/get`).then(Response =>{
          // console.log(Response.data)
          setCustumerData(Response.data)
         }).catch(err =>{
@@ -165,7 +164,7 @@ function AddSale() {
         }
         console.log(orderObject)
         axios
-        .post("/order/add", orderObject)
+        .post(`${url}order/add`, orderObject)
         .then(res => {
           console.log(res.data)
           Swal.fire({

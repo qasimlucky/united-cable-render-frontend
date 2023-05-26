@@ -5,7 +5,7 @@ import Navbar from "./components/Navbar";
 import Sidebar from "./components/Sidebar";
 import { ColorRing } from 'react-loader-spinner'
 import { Link,useNavigate } from 'react-router-dom';
-
+import { url } from "../config";
 function Home (){
     const [data, setData] = useState([{}])
     const [customerdata, setCustomerData] = useState([{}])
@@ -14,7 +14,7 @@ function Home (){
     const [isloading, setIsLoading] = useState(true);
 
     useEffect(() => {
-        axios.get("/admin/dashboard").then(Response =>{
+        axios.get(`${url}admin/dashboard`).then(Response =>{
           console.log(Response.data[0])
             setData(Response.data[0])
             setCustomerData(Response.data[0].customerList)

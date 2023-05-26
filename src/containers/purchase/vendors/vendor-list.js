@@ -9,14 +9,14 @@ import { ColorRing } from 'react-loader-spinner';
 import { BsFillEyeFill } from "react-icons/bs";
 import { BsArrowDown } from "react-icons/bs";
 import { BsJournalArrowDown } from "react-icons/bs";
-
+import { url } from "../../../config";
 function VendorList() {
   const [data, setData] = useState([{}])
   const [itemOffset, setItemOffset] = useState(0);
   const [isloading, setIsLoading] = useState(true);
     let navigate = useNavigate();
     useEffect(() => {
-      axios.get("http://localhost:7000/product/vendor").then(Response =>{
+      axios.get(`${url}product/vendor`).then(Response =>{
         console.log(Response.data)
           setData(Response.data)
           setIsLoading(false)

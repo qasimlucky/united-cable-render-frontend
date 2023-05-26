@@ -9,7 +9,7 @@ import { BsXLg } from "react-icons/bs";
 import { Alert } from '@coreui/react';
 import '@coreui/coreui/dist/css/coreui.min.css'
 import { CMultiSelect } from '@coreui/react-pro'
-
+import { url } from "../../config";
 
 function AddPurchase(props) {
 
@@ -64,7 +64,7 @@ function AddPurchase(props) {
       setItemUnit(e.target.value)
     }
     useEffect(() => {
-        axios.get("http://localhost:7000/product/vendor").then(Response =>{
+        axios.get(`${url}product/vendor`).then(Response =>{
           console.log(Response.data)
           setVendorData(Response.data)
         }).catch(err =>{
@@ -72,7 +72,7 @@ function AddPurchase(props) {
         })
     },[]);
     useEffect(() => {
-        axios.get("http://localhost:7000/product/get").then(Response =>{
+        axios.get(`${url}product/get`).then(Response =>{
           console.log(Response.data)
           setStockData(Response.data)
         }).catch(err =>{
@@ -80,7 +80,7 @@ function AddPurchase(props) {
         })
     },[]);
     useEffect(() => {
-        axios.get("http://localhost:7000/product/categroy/get").then(Response =>{
+        axios.get(`${url}product/categroy/get`).then(Response =>{
           console.log(Response.data)
           setCategroyData(Response.data)
         }).catch(err =>{
@@ -88,7 +88,7 @@ function AddPurchase(props) {
         })
     },[]);
     useEffect(() => {
-        axios.get("http://localhost:7000/product/color/get").then(Response =>{
+        axios.get(`${url}product/color/get`).then(Response =>{
           console.log(Response.data)
           setColorData(Response.data)
         }).catch(err =>{
@@ -96,7 +96,7 @@ function AddPurchase(props) {
         })
     },[]);
     useEffect(() => {
-      axios.get("http://localhost:7000/product/unit/get").then(Response =>{
+      axios.get(`${url}product/unit/get`).then(Response =>{
         console.log(Response.data)
         setUnitData(Response.data)
       }).catch(err =>{
@@ -153,7 +153,7 @@ function AddPurchase(props) {
           console.log("this is save bill")
           console.log(savebill) */    
           axios
-          .post("http://localhost:7000/purchase/add", PurchaseObject)
+          .post(`${url}purchase/add`, PurchaseObject)
           .then(res => {
             console.log(res.data)
             Swal.fire({
