@@ -7,7 +7,7 @@ import Navbar from "../components/Navbar";
 import Swal from 'sweetalert2';
 import { BsFillTrashFill } from "react-icons/bs";
 import withReactContent from 'sweetalert2-react-content'
-
+import { url } from "../../config";
 
 function AddSaleProduct (props){
 
@@ -33,7 +33,7 @@ function AddSaleProduct (props){
     
     
     useEffect(() => {
-        axios.get("/sale/product/categroy/get").then(Response =>{
+        axios.get(`${url}sale/product/categroy/get`).then(Response =>{
          // console.log(Response.data)
           setCategroyData(Response.data)
         }).catch(err =>{
@@ -42,7 +42,7 @@ function AddSaleProduct (props){
     },[]);
 
     useEffect(() => {
-        axios.get("/sale/product/type/get").then(Response =>{
+        axios.get(`${url}sale/product/type/get`).then(Response =>{
           console.log(Response.data)
           setTypeData(Response.data)
         }).catch(err =>{
@@ -51,7 +51,7 @@ function AddSaleProduct (props){
     },[]);
 
     useEffect(() => {
-        axios.get("/sale/product/packing/get").then(Response =>{
+        axios.get(`${url}sale/product/packing/get`).then(Response =>{
           console.log(Response.data)
           setPackingData(Response.data)
         }).catch(err =>{
@@ -60,7 +60,7 @@ function AddSaleProduct (props){
     },[]);
 
     useEffect(() => {
-      axios.get("/sale/product/unit/get").then(Response =>{
+      axios.get(`${url}sale/product/unit/get`).then(Response =>{
         console.log(Response.data)
         setUnitData(Response.data)
       }).catch(err =>{
@@ -69,7 +69,7 @@ function AddSaleProduct (props){
     },[]);
 
     useEffect(() => {
-      axios.get("/sale/product/size/get").then(Response =>{
+      axios.get(`${url}sale/product/size/get`).then(Response =>{
         console.log(Response.data)
         setSizeData(Response.data)
       }).catch(err =>{
@@ -78,7 +78,7 @@ function AddSaleProduct (props){
     },[]);
   
     useEffect(() => {
-      axios.get("/sale/product/name/get").then(Response =>{
+      axios.get(`${url}sale/product/name/get`).then(Response =>{
         console.log(Response.data)
         setNameData(Response.data)
       }).catch(err =>{

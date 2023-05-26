@@ -6,14 +6,14 @@ import Footer from "../components/Footer";
 import ReactPaginate from 'react-paginate';
 import { Link,useNavigate } from 'react-router-dom';
 import { ColorRing } from 'react-loader-spinner'
-
+import { url } from "../../config";
 function CategroyList() {
   const [data, setData] = useState([{}])
   const [itemOffset, setItemOffset] = useState(0);
   const [isloading, setIsLoading] = useState(true);
 
     useEffect(() => {
-      axios.get("http://localhost:7000/product/categroy/get").then(Response =>{
+      axios.get(`${url}product/categroy/get`).then(Response =>{
         console.log(Response.data)
           setData(Response.data)
           setIsLoading(false)

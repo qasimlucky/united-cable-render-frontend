@@ -1,7 +1,7 @@
 import React,{Component,useState} from "react";
 import { useLocation,useNavigate } from 'react-router-dom';
 import axios, { Axios } from "axios";
-
+import { url } from "../../config";
 
 
 function LoginForm (){
@@ -23,7 +23,7 @@ let navigate = useNavigate();
 function submit(e){
   e.preventDefault();
   axios
-  .post("/web/login",{
+  .post(`${url}web/login`,{
     phone_number : data.phone_number,
     password : data.password,
 
