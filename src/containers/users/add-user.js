@@ -5,7 +5,7 @@ import Sidebar from "../components/Sidebar";
 import Navbar from "../components/Navbar";
 import Swal from 'sweetalert2'
 import withReactContent from 'sweetalert2-react-content'
-
+import { url } from "../../config";
 
 function AddUser(props) {
   let navigate = useNavigate();
@@ -18,7 +18,7 @@ function AddUser(props) {
     setData(newdata)
     console.log(data)
   }
-  const url = "http://localhost:7000/user/create"
+  const url = `${url}user/create`
   function submit(e) {
     console.log(data)
     e.preventDefault();

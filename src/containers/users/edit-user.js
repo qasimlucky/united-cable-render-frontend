@@ -5,7 +5,7 @@ import Sidebar from "../components/Sidebar";
 import Navbar from "../components/Navbar";
 import Swal from 'sweetalert2'
 import withReactContent from 'sweetalert2-react-content'
-
+import { url } from "../../config";
 
 
 function EditUser(props) {
@@ -29,7 +29,7 @@ function EditUser(props) {
     setData(newdata)
   }
 
-  const url = "http://localhost:7000/user/edit"
+  const url = `${url}user/edit`
   function submit(e) {
     console.log(data)
     e.preventDefault();

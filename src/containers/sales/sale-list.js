@@ -6,7 +6,7 @@ import Footer from "../components/Footer";
 import ReactPaginate from 'react-paginate';
 import { Link,useNavigate } from 'react-router-dom';
 import { ColorRing } from 'react-loader-spinner'
-
+import { url } from "../../config";
 function SaleList() {
 
     const [data, setData] = useState([{}])
@@ -14,7 +14,7 @@ function SaleList() {
     const [isloading, setIsLoading] = useState(true);
   
       useEffect(() => {
-        axios.get("/order/get").then(Response =>{
+        axios.get(`${url}order/get`).then(Response =>{
           console.log(Response.data)
             setData(Response.data)
             setIsLoading(false)
