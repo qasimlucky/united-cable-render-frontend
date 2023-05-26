@@ -6,7 +6,7 @@ import { useNavigate } from 'react-router-dom';
 import  { useRef } from 'react';
 import { ColorRing } from 'react-loader-spinner';
 import { useReactToPrint } from 'react-to-print';
-
+import { url } from "../../../config";
 
 function VendorPrintPurchase(props) {
 
@@ -23,7 +23,7 @@ function VendorPrintPurchase(props) {
 
         useEffect(() => {
             console.log(vendor_id)
-            axios.post("/product/vendor/details",{vendor_id:vendor_id}).then(Response =>{
+            axios.post(`${url}product/vendor/details`,{vendor_id:vendor_id}).then(Response =>{
                 console.log("vendor is comeing")
                 console.log(Response.data)
                 setVendorData(Response.data[0])

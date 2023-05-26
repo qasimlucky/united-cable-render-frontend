@@ -9,7 +9,7 @@ import { ColorRing } from 'react-loader-spinner';
 import { BsFillEyeFill } from "react-icons/bs";
 import { BsArrowDown } from "react-icons/bs";
 import { BsJournalArrowDown } from "react-icons/bs";
-
+import { url } from "../../../config";
 function CustomerList() {
 
     const [data, setData] = useState([{}])
@@ -19,7 +19,7 @@ function CustomerList() {
     let navigate = useNavigate();
   
       useEffect(() => {
-        axios.get("/customer/get").then(Response =>{
+        axios.get(`${url}customer/get`).then(Response =>{
           console.log(Response.data)
             setData(Response.data)
             setIsLoading(false)

@@ -2,7 +2,7 @@ import React,{useState} from "react";
 import { useNavigate } from 'react-router-dom';
 import axios from "axios";
 import Swal from 'sweetalert2';
-
+import { url } from "../../config";
 
 
 function LoginForm (){
@@ -22,7 +22,7 @@ let navigate = useNavigate();
 function submit(e){
   e.preventDefault();
   axios
-  .post("https://united-cable-backend.onrender.com/user/login",{
+  .post(`${ url }user/login`,{
     phone_number : data.phone_number,
     password : data.password,
   }, { withCredentials: true })

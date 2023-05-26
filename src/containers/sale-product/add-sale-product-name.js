@@ -5,7 +5,7 @@ import Sidebar from "../components/Sidebar";
 import Navbar from "../components/Navbar";
 import Swal from 'sweetalert2'
 import withReactContent from 'sweetalert2-react-content'
-
+import { url } from "../../config";
 
 function AddSaleProducName(props) {
   let navigate = useNavigate();
@@ -18,7 +18,7 @@ function AddSaleProducName(props) {
     setData(newdata)
    // console.log(data)
   }
-  const url = "/sale/product/name/create"
+  const url = `${url}sale/product/name/create`
   function submit(e) {
     console.log(data)
     e.preventDefault();
