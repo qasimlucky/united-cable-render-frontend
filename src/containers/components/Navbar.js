@@ -1,11 +1,12 @@
 import React,{useState,useEffect} from "react";
 import axios from "axios";
 import { Link,useNavigate } from 'react-router-dom';
+import { url } from "../../config";
 function Navbar (){
     let navigate = useNavigate();
         function handlelogout(){
             axios
-            .post("/user/logout",{})
+            .post(`${url}user/logout`,{})
             .then(Response =>{
                console.log(Response.data)
                navigate("/login")
