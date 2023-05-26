@@ -5,7 +5,7 @@ import Sidebar from "../../components/Sidebar";
 import Navbar from "../../components/Sidebar";
 import Swal from 'sweetalert2'
 import withReactContent from 'sweetalert2-react-content'
-
+import { url } from "../../../config";
 
 function AddVendor(props) {
   let navigate = useNavigate();
@@ -23,7 +23,7 @@ function AddVendor(props) {
     setData(newdata)
    // console.log(data)
   }
-  const url = "http://localhost:7000/product/vendor"
+  const url = `${url}product/vendor`
   function submit(e) {
     console.log(data)
     e.preventDefault();
