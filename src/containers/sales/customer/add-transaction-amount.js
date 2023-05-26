@@ -8,7 +8,7 @@ import withReactContent from 'sweetalert2-react-content';
 import {useLocation} from 'react-router-dom';
 import { BsJournalArrowDown } from "react-icons/bs";
 import DatePicker from 'react-date-picker';
-
+import { url } from "../../../config";
 
 function AddCustomerTransactionAmount(props) {
   let navigate = useNavigate();
@@ -61,7 +61,7 @@ function AddCustomerTransactionAmount(props) {
    // setOpeningBalance(Accountbalance)
     
 
-  const url = "/customer/transaction/add-amount"
+  const url = `${url}customer/transaction/add-amount`
 async function submit(e) {
     console.log(data)
     //e.preventDefault();

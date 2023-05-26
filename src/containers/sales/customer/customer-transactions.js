@@ -14,7 +14,7 @@ import Modal from 'react-modal';
 import { Controlled as ControlledZoom } from 'react-medium-image-zoom'
 import 'react-medium-image-zoom/dist/styles.css'
 import { saveAs } from 'file-saver';
-
+import { url } from "../../../config";
 
 const customStyles = {
   overlay: {zIndex: 1000}
@@ -57,7 +57,7 @@ function CustomerTransaction() {
 
       useEffect(() => {
         axios
-        .post("/customer/transaction/get", {customer_id:customer_id})
+        .post(`${url}customer/transaction/get`, {customer_id:customer_id})
         .then(res => {
           console.log(res.data)
           setData(res.data)
