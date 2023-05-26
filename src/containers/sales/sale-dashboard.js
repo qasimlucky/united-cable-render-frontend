@@ -5,7 +5,7 @@ import Navbar from "./../components/Navbar";
 import Sidebar from "./../components/Sidebar";
 import { ColorRing } from 'react-loader-spinner'
 import { Link,useNavigate } from 'react-router-dom';
-
+import { url } from "../../config";
 function SaleManDashboard (){
     const [data, setData] = useState([{}])
     const [orderdata, setOrderData] = useState([{}])
@@ -14,7 +14,7 @@ function SaleManDashboard (){
     const [isloading, setIsLoading] = useState(true);
 
     useEffect(() => {
-        axios.get("/saleman/dashboard").then(Response =>{
+        axios.get(`${url}saleman/dashboard`).then(Response =>{
           console.log(Response.data[0])
             setData(Response.data[0])
             setOrderData(Response.data[0].orderList)

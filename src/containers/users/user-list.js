@@ -6,14 +6,14 @@ import Footer from "../components/Footer";
 import { Link,useNavigate } from 'react-router-dom';
 import ReactPaginate from 'react-paginate';
 import { ColorRing } from 'react-loader-spinner';
-
+import { url } from "../../config";
 function UserList() {
   const [data, setData] = useState([{}])
   const [itemOffset, setItemOffset] = useState(0);
   const [isloading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    axios.get("http://localhost:7000/user/get").then(Response =>{
+    axios.get(`${url}user/get`).then(Response =>{
       console.log(Response.data)
         setData(Response.data)
         setIsLoading(false)
